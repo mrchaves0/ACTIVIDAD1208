@@ -1,17 +1,14 @@
-public class Motocicleta extends Vehiculo{
+/**
+ * Representa una motocicleta.
+ * (Versión esqueleto: estructura y firmas de métodos, sin lógica todavía)
+ */
+public class Motocicleta extends Vehiculo {
 
     private int cilindraje;
 
-    public Motocicleta (){
-
-    }
-
-    public Motocicleta(int cilindraje) {
-        this.cilindraje = cilindraje;
-    }
-
-    public Motocicleta(String placa, String marca, String modelo, int año, double precioBase, int cilindraje) {
-        super(placa, marca, modelo, año, precioBase);
+    public Motocicleta(String placa, String marca, String modelo, int anio, double precioBase,
+                       int cilindraje) {
+        super(placa, marca, modelo, anio, precioBase);
         this.cilindraje = cilindraje;
     }
 
@@ -24,9 +21,13 @@ public class Motocicleta extends Vehiculo{
     }
 
     @Override
-    public String toString() {
-        return "Motocicleta{" +
-                "cilindraje=" + cilindraje +
-                '}';
+    public double calcularPrecioFinal() {
+        // TODO: aplicar 3% de impuesto (+2% si cilindraje > 500)
+        return 0;
+    }
+
+    @Override
+    public String mostrarFicha() {
+        return super.mostrarFicha() + "\nTipo: Motocicleta | Cilindraje: " + cilindraje + " c.c.";
     }
 }

@@ -1,20 +1,20 @@
+/**
+ * Clase abstracta que representa el concepto general de un vehículo.
+ * (Versión esqueleto: estructura y firmas de métodos, sin lógica todavía)
+ */
 public abstract class Vehiculo {
 
     private String placa;
     private String marca;
     private String modelo;
-    private int año;
+    private int anio;
     private double precioBase;
 
-    public Vehiculo() {
-
-    }
-
-    public Vehiculo(String placa, String marca, String modelo, int año, double precioBase) {
+    public Vehiculo(String placa, String marca, String modelo, int anio, double precioBase) {
         this.placa = placa;
         this.marca = marca;
         this.modelo = modelo;
-        this.año = año;
+        this.anio = anio;
         this.precioBase = precioBase;
     }
 
@@ -42,12 +42,12 @@ public abstract class Vehiculo {
         this.modelo = modelo;
     }
 
-    public int getAño() {
-        return año;
+    public int getAnio() {
+        return anio;
     }
 
-    public void setAño(int año) {
-        this.año = año;
+    public void setAnio(int anio) {
+        this.anio = anio;
     }
 
     public double getPrecioBase() {
@@ -58,14 +58,9 @@ public abstract class Vehiculo {
         this.precioBase = precioBase;
     }
 
-    @Override
-    public String toString() {
-        return "Vehiculo{" +
-                "placa='" + placa + '\'' +
-                ", marca='" + marca + '\'' +
-                ", modelo='" + modelo + '\'' +
-                ", año=" + año +
-                ", precioBase=" + precioBase +
-                '}';
+    public abstract double calcularPrecioFinal();
+
+    public String mostrarFicha() {
+        return "Placa: " + placa + " | Marca: " + marca + " | Modelo: " + modelo + " | Año: " + anio;
     }
 }
